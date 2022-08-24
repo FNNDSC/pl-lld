@@ -6,7 +6,7 @@ with open(path.join(path.dirname(path.abspath(__file__)), 'README.rst')) as f:
 
 setup(
     name             = 'lld',
-    version          = '0.1',
+    version          = '0.2',
     description      = 'An inference app to use pre-trained weights to measure length discrepancy in input leg images',
     long_description = readme,
     author           = 'FNNDSC',
