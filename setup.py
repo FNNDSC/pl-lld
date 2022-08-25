@@ -18,7 +18,6 @@ setup(
     tests_require    = ['nose'],
     license          = 'MIT',
     zip_safe         = False,
-    python_requires  = '>=3.6',
     entry_points     = {
         'console_scripts': [
             'lld = lld.__main__:main'
