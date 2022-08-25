@@ -1,0 +1,1177 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 112 files
+Detected 26 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: LLDcode/tensorflow_train/utils/tensorflow_util.py
+--------------------------------------------------------------------------------
+LLDcode/tensorflow_train/utils/tensorflow_util.py:17:15: ERROR: Using member tf.contrib.framework.get_variables in deprecated module tf.contrib. tf.contrib.framework.get_variables cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+LLDcode/tensorflow_train/utils/tensorflow_util.py:137:11: ERROR: Using member tf.contrib.distributions.percentile in deprecated module tf.contrib. tf.contrib.distributions.percentile cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+LLDcode/tensorflow_train/utils/tensorflow_util.py:143:11: ERROR: Using member tf.contrib.distributions.percentile in deprecated module tf.contrib. tf.contrib.distributions.percentile cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: LLDcode/tensorflow_train/utils/loss_aggregator.py
+--------------------------------------------------------------------------------
+LLDcode/tensorflow_train/utils/loss_aggregator.py:22:96: ERROR: Using member tf.contrib.metrics.streaming_mean in deprecated module tf.contrib. tf.contrib.metrics.streaming_mean cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: LLDcode/tensorflow_train/utils/rotation_matrix_builder.py
+--------------------------------------------------------------------------------
+LLDcode/tensorflow_train/utils/rotation_matrix_builder.py:102:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+LLDcode/tensorflow_train/utils/rotation_matrix_builder.py:157:18: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+--------------------------------------------------------------------------------
+File: LLDcode/tensorflow_train/layers/resize.py
+--------------------------------------------------------------------------------
+LLDcode/tensorflow_train/layers/resize.py:35:29: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+LLDcode/tensorflow_train/layers/resize.py:43:29: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+LLDcode/tensorflow_train/layers/resize.py:79:29: WARNING: tf.image.resize_bicubic called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bicubic.
+LLDcode/tensorflow_train/layers/resize.py:87:29: WARNING: tf.image.resize_bicubic called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bicubic.
+LLDcode/tensorflow_train/layers/resize.py:117:42: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+LLDcode/tensorflow_train/layers/resize.py:145:42: WARNING: tf.image.resize_bicubic called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bicubic.
+--------------------------------------------------------------------------------
+File: LLDcode/tensorflow_train/layers/conv_lstm.py
+--------------------------------------------------------------------------------
+LLDcode/tensorflow_train/layers/conv_lstm.py:51:12: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+LLDcode/tensorflow_train/layers/conv_lstm.py:54:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+LLDcode/tensorflow_train/layers/conv_lstm.py:59:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+LLDcode/tensorflow_train/layers/conv_lstm.py:60:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+LLDcode/tensorflow_train/layers/conv_lstm.py:72:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+--------------------------------------------------------------------------------
+File: LLDcode/tensorflow_train/layers/layers.py
+--------------------------------------------------------------------------------
+LLDcode/tensorflow_train/layers/layers.py:132:14: ERROR: Using member tf.contrib.keras.layers.UpSampling2D in deprecated module tf.contrib. tf.contrib.keras.layers.UpSampling2D cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+LLDcode/tensorflow_train/layers/layers.py:384:26: ERROR: Using member tf.contrib.keras.layers.UpSampling3D in deprecated module tf.contrib. tf.contrib.keras.layers.UpSampling3D cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+LLDcode/tensorflow_train/layers/layers.py:475:18: ERROR: Using member tf.contrib.nn.alpha_dropout in deprecated module tf.contrib. tf.contrib.nn.alpha_dropout cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+LLDcode/tensorflow_train/layers/layers.py:478:18: ERROR: Using member tf.contrib.nn.alpha_dropout in deprecated module tf.contrib. tf.contrib.nn.alpha_dropout cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: LLDcode/tensorflow_train/layers/normalizers.py
+--------------------------------------------------------------------------------
+LLDcode/tensorflow_train/layers/normalizers.py:14:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+LLDcode/tensorflow_train/layers/normalizers.py:15:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+LLDcode/tensorflow_train/layers/normalizers.py:27:15: ERROR: Using member tf.contrib.layers.batch_norm in deprecated module tf.contrib. tf.contrib.layers.batch_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+LLDcode/tensorflow_train/layers/normalizers.py:41:15: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+LLDcode/tensorflow_train/layers/normalizers.py:42:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: 'LLDcode/'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/dataset.py'
+ outputting to 'LLDcode_new/dataset.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/network.py'
+ outputting to 'LLDcode_new/network.py'
+--------------------------------------------------------------------------------
+
+2:0: INFO: Not upgrading symbols because `tensorflow.compat.v1` was directly imported as `tf`.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/main.py'
+ outputting to 'LLDcode_new/main.py'
+--------------------------------------------------------------------------------
+
+4:0: INFO: Not upgrading symbols because `tensorflow.compat.v1` was directly imported as `tf`.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasets/basic_dataset.py'
+ outputting to 'LLDcode_new/datasets/basic_dataset.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasets/__init__.py'
+ outputting to 'LLDcode_new/datasets/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasets/pyro_dataset.py'
+ outputting to 'LLDcode_new/datasets/pyro_dataset.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasets/debug_image_dataset.py'
+ outputting to 'LLDcode_new/datasets/debug_image_dataset.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasets/dataset_base.py'
+ outputting to 'LLDcode_new/datasets/dataset_base.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasets/reference_image_transformation_dataset.py'
+ outputting to 'LLDcode_new/datasets/reference_image_transformation_dataset.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasets/graph_dataset.py'
+ outputting to 'LLDcode_new/datasets/graph_dataset.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasources/datasource_base.py'
+ outputting to 'LLDcode_new/datasources/datasource_base.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasources/cached_image_datasource.py'
+ outputting to 'LLDcode_new/datasources/cached_image_datasource.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasources/image_datasource.py'
+ outputting to 'LLDcode_new/datasources/image_datasource.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasources/__init__.py'
+ outputting to 'LLDcode_new/datasources/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasources/label_datasource.py'
+ outputting to 'LLDcode_new/datasources/label_datasource.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasources/video_frame_list_datasource.py'
+ outputting to 'LLDcode_new/datasources/video_frame_list_datasource.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/datasources/landmark_datasource.py'
+ outputting to 'LLDcode_new/datasources/landmark_datasource.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/conv_cv0/2022-04-05_16-47-51/dataset.py'
+ outputting to 'LLDcode_new/conv_cv0/2022-04-05_16-47-51/dataset.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/conv_cv0/2022-04-05_16-47-51/network.py'
+ outputting to 'LLDcode_new/conv_cv0/2022-04-05_16-47-51/network.py'
+--------------------------------------------------------------------------------
+
+19:26: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+19:26: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+22:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+27:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+38:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+50:26: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+50:26: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+53:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+55:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+72:26: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+72:26: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+75:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+92:26: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+92:26: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+94:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+146:31: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+146:31: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+148:33: INFO: tf.truncated_normal_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+148:33: INFO: Renamed 'tf.truncated_normal_initializer' to 'tf.compat.v1.truncated_normal_initializer'
+151:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+155:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+162:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/conv_cv0/2022-04-05_16-47-51/main.py'
+ outputting to 'LLDcode_new/conv_cv0/2022-04-05_16-47-51/main.py'
+--------------------------------------------------------------------------------
+
+93:14: INFO: Renamed 'tf.make_template' to 'tf.compat.v1.make_template'
+107:37: INFO: Renamed 'tf.get_collection' to 'tf.compat.v1.get_collection'
+107:55: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+109:29: INFO: Renamed 'tf.get_collection' to 'tf.compat.v1.get_collection'
+109:47: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+117:25: INFO: Renamed 'tf.train.MomentumOptimizer' to 'tf.compat.v1.train.MomentumOptimizer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/generators/landmark_generator.py'
+ outputting to 'LLDcode_new/generators/landmark_generator.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/generators/video_frame_list_generator.py'
+ outputting to 'LLDcode_new/generators/video_frame_list_generator.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/generators/__init__.py'
+ outputting to 'LLDcode_new/generators/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/generators/transformation_generator_base.py'
+ outputting to 'LLDcode_new/generators/transformation_generator_base.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/generators/generator_base.py'
+ outputting to 'LLDcode_new/generators/generator_base.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/generators/image_generator.py'
+ outputting to 'LLDcode_new/generators/image_generator.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/generators/label_generator.py'
+ outputting to 'LLDcode_new/generators/label_generator.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/__init__.py'
+ outputting to 'LLDcode_new/utils/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/image_tiler.py'
+ outputting to 'LLDcode_new/utils/image_tiler.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/geometry.py'
+ outputting to 'LLDcode_new/utils/geometry.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/sitk_np.py'
+ outputting to 'LLDcode_new/utils/sitk_np.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/np_image.py'
+ outputting to 'LLDcode_new/utils/np_image.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/timer.py'
+ outputting to 'LLDcode_new/utils/timer.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/sitk_image.py'
+ outputting to 'LLDcode_new/utils/sitk_image.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/random.py'
+ outputting to 'LLDcode_new/utils/random.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/segmentation/segmentation_test.py'
+ outputting to 'LLDcode_new/utils/segmentation/segmentation_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/segmentation/metrics.py'
+ outputting to 'LLDcode_new/utils/segmentation/metrics.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/segmentation/instance_segmentation_test.py'
+ outputting to 'LLDcode_new/utils/segmentation/instance_segmentation_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/segmentation/segmentation_statistics.py'
+ outputting to 'LLDcode_new/utils/segmentation/segmentation_statistics.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/landmark/landmark_statistics.py'
+ outputting to 'LLDcode_new/utils/landmark/landmark_statistics.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/landmark/heatmap_test.py'
+ outputting to 'LLDcode_new/utils/landmark/heatmap_test.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/landmark/__init__.py'
+ outputting to 'LLDcode_new/utils/landmark/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/landmark/transform.py'
+ outputting to 'LLDcode_new/utils/landmark/transform.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/landmark/spine_postprocessing.py'
+ outputting to 'LLDcode_new/utils/landmark/spine_postprocessing.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/landmark/heatmap_image_generator.py'
+ outputting to 'LLDcode_new/utils/landmark/heatmap_image_generator.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/landmark/common.py'
+ outputting to 'LLDcode_new/utils/landmark/common.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/io/image.py'
+ outputting to 'LLDcode_new/utils/io/image.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/io/landmark.py'
+ outputting to 'LLDcode_new/utils/io/landmark.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/io/__init__.py'
+ outputting to 'LLDcode_new/utils/io/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/io/video_frame_list.py'
+ outputting to 'LLDcode_new/utils/io/video_frame_list.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/io/text.py'
+ outputting to 'LLDcode_new/utils/io/text.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/utils/io/common.py'
+ outputting to 'LLDcode_new/utils/io/common.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/iterators/__init__.py'
+ outputting to 'LLDcode_new/iterators/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/iterators/iterator_base.py'
+ outputting to 'LLDcode_new/iterators/iterator_base.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/iterators/video_frame_id_list_iterator.py'
+ outputting to 'LLDcode_new/iterators/video_frame_id_list_iterator.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/iterators/id_list_iterator.py'
+ outputting to 'LLDcode_new/iterators/id_list_iterator.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/__init__.py'
+ outputting to 'LLDcode_new/transformations/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/__init__.py'
+ outputting to 'LLDcode_new/transformations/intensity/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/base.py'
+ outputting to 'LLDcode_new/transformations/intensity/base.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/np/smooth.py'
+ outputting to 'LLDcode_new/transformations/intensity/np/smooth.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/np/shift_scale_clamp.py'
+ outputting to 'LLDcode_new/transformations/intensity/np/shift_scale_clamp.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/np/__init__.py'
+ outputting to 'LLDcode_new/transformations/intensity/np/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/np/gamma.py'
+ outputting to 'LLDcode_new/transformations/intensity/np/gamma.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/np/noise.py'
+ outputting to 'LLDcode_new/transformations/intensity/np/noise.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/np/normalize.py'
+ outputting to 'LLDcode_new/transformations/intensity/np/normalize.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/sitk/smooth.py'
+ outputting to 'LLDcode_new/transformations/intensity/sitk/smooth.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/sitk/shift_scale_clamp.py'
+ outputting to 'LLDcode_new/transformations/intensity/sitk/shift_scale_clamp.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/sitk/__init__.py'
+ outputting to 'LLDcode_new/transformations/intensity/sitk/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/intensity/sitk/normalize.py'
+ outputting to 'LLDcode_new/transformations/intensity/sitk/normalize.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/landmark.py'
+ outputting to 'LLDcode_new/transformations/spatial/landmark.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/composite.py'
+ outputting to 'LLDcode_new/transformations/spatial/composite.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/__init__.py'
+ outputting to 'LLDcode_new/transformations/spatial/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/deformation.py'
+ outputting to 'LLDcode_new/transformations/spatial/deformation.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/center_line_at_y_axis.py'
+ outputting to 'LLDcode_new/transformations/spatial/center_line_at_y_axis.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/flip.py'
+ outputting to 'LLDcode_new/transformations/spatial/flip.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/scale.py'
+ outputting to 'LLDcode_new/transformations/spatial/scale.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/base.py'
+ outputting to 'LLDcode_new/transformations/spatial/base.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/rotation.py'
+ outputting to 'LLDcode_new/transformations/spatial/rotation.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/common.py'
+ outputting to 'LLDcode_new/transformations/spatial/common.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/transformations/spatial/translation.py'
+ outputting to 'LLDcode_new/transformations/spatial/translation.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/__init__.py'
+ outputting to 'LLDcode_new/tensorflow_train/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/data_generator_base.py'
+ outputting to 'LLDcode_new/tensorflow_train/data_generator_base.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/data_generator.py'
+ outputting to 'LLDcode_new/tensorflow_train/data_generator.py'
+--------------------------------------------------------------------------------
+
+2:0: INFO: Not upgrading symbols because `tensorflow.compat.v1` was directly imported as `tf`.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/data_generator_padding.py'
+ outputting to 'LLDcode_new/tensorflow_train/data_generator_padding.py'
+--------------------------------------------------------------------------------
+
+28:37: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+30:21: INFO: Renamed 'tf.PaddingFIFOQueue' to 'tf.queue.PaddingFIFOQueue'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/train_loop.py'
+ outputting to 'LLDcode_new/tensorflow_train/train_loop.py'
+--------------------------------------------------------------------------------
+
+3:0: INFO: Not upgrading symbols because `tensorflow.compat.v1` was directly imported as `tf`.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/utils/summary_handler.py'
+ outputting to 'LLDcode_new/tensorflow_train/utils/summary_handler.py'
+--------------------------------------------------------------------------------
+
+6:0: INFO: Not upgrading symbols because `tensorflow.compat.v1` was directly imported as `tf`.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/utils/__init__.py'
+ outputting to 'LLDcode_new/tensorflow_train/utils/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/utils/print_utils.py'
+ outputting to 'LLDcode_new/tensorflow_train/utils/print_utils.py'
+--------------------------------------------------------------------------------
+
+34:33: INFO: tf.initializers.variance_scaling requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+34:33: INFO: Renamed 'tf.initializers.variance_scaling' to 'tf.compat.v1.initializers.variance_scaling'
+36:33: INFO: tf.initializers.truncated_normal requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+36:33: INFO: Renamed 'tf.initializers.truncated_normal' to 'tf.compat.v1.initializers.truncated_normal'
+38:33: INFO: tf.initializers.constant requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+38:33: INFO: Renamed 'tf.initializers.constant' to 'tf.compat.v1.initializers.constant'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/utils/tensorflow_util.py'
+ outputting to 'LLDcode_new/tensorflow_train/utils/tensorflow_util.py'
+--------------------------------------------------------------------------------
+
+3:0: INFO: Not upgrading symbols because `tensorflow.compat.v1` was directly imported as `tf`.
+17:15: ERROR: Using member tf.contrib.framework.get_variables in deprecated module tf.contrib. tf.contrib.framework.get_variables cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+137:11: ERROR: Using member tf.contrib.distributions.percentile in deprecated module tf.contrib. tf.contrib.distributions.percentile cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+143:11: ERROR: Using member tf.contrib.distributions.percentile in deprecated module tf.contrib. tf.contrib.distributions.percentile cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/utils/layer_weight_inspector.py'
+ outputting to 'LLDcode_new/tensorflow_train/utils/layer_weight_inspector.py'
+--------------------------------------------------------------------------------
+
+18:18: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+19:14: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+19:14: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+33:21: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+38:23: INFO: tf.summary.merge requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+38:23: INFO: Renamed 'tf.summary.merge' to 'tf.compat.v1.summary.merge'
+39:22: INFO: tf.summary.FileWriter requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+39:22: INFO: Renamed 'tf.summary.FileWriter' to 'tf.compat.v1.summary.FileWriter'
+55:22: INFO: tf.summary.histogram requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+55:22: INFO: Renamed 'tf.summary.histogram' to 'tf.compat.v1.summary.histogram'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/utils/heatmap_image_generator.py'
+ outputting to 'LLDcode_new/tensorflow_train/utils/heatmap_image_generator.py'
+--------------------------------------------------------------------------------
+
+47:24: INFO: Added keywords to args of function 'tf.reduce_sum'
+49:23: INFO: Renamed 'tf.where' to 'tf.compat.v1.where'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/utils/loss_aggregator.py'
+ outputting to 'LLDcode_new/tensorflow_train/utils/loss_aggregator.py'
+--------------------------------------------------------------------------------
+
+22:96: ERROR: Using member tf.contrib.metrics.streaming_mean in deprecated module tf.contrib. tf.contrib.metrics.streaming_mean cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+23:30: INFO: tf.summary.FileWriter requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+23:30: INFO: Renamed 'tf.summary.FileWriter' to 'tf.compat.v1.summary.FileWriter'
+88:26: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+90:22: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+90:22: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+92:23: INFO: tf.summary.merge requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+92:23: INFO: Renamed 'tf.summary.merge' to 'tf.compat.v1.summary.merge'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/utils/data_format.py'
+ outputting to 'LLDcode_new/tensorflow_train/utils/data_format.py'
+--------------------------------------------------------------------------------
+
+137:15: INFO: Added keywords to args of function 'tf.transpose'
+139:15: INFO: Added keywords to args of function 'tf.transpose'
+144:15: INFO: Added keywords to args of function 'tf.transpose'
+146:15: INFO: Added keywords to args of function 'tf.transpose'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/utils/rotation_matrix_builder.py'
+ outputting to 'LLDcode_new/tensorflow_train/utils/rotation_matrix_builder.py'
+--------------------------------------------------------------------------------
+
+102:29: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+102:29: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+102:110: INFO: tf.initializers.random_uniform requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+102:110: INFO: Renamed 'tf.initializers.random_uniform' to 'tf.compat.v1.initializers.random_uniform'
+117:23: INFO: Renamed 'tf.sparse_tensor_dense_matmul' to 'tf.sparse.sparse_dense_matmul'
+157:18: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+157:18: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+159:44: INFO: Added keywords to args of function 'tf.norm'
+166:40: INFO: Added keywords to args of function 'tf.norm'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/layers/resize.py'
+ outputting to 'LLDcode_new/tensorflow_train/layers/resize.py'
+--------------------------------------------------------------------------------
+
+22:9: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+22:9: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+24:35: INFO: Added keywords to args of function 'tf.transpose'
+35:29: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+35:29: INFO: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+40:21: INFO: Added keywords to args of function 'tf.transpose'
+43:29: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+43:29: INFO: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+47:21: INFO: Added keywords to args of function 'tf.transpose'
+49:21: INFO: Added keywords to args of function 'tf.transpose'
+66:9: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+66:9: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+68:35: INFO: Added keywords to args of function 'tf.transpose'
+79:29: WARNING: tf.image.resize_bicubic called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bicubic.
+79:29: INFO: Changed tf.image.resize_bicubic call to tf.image.resize(..., method=tf.image.ResizeMethod.BICUBIC).
+84:21: INFO: Added keywords to args of function 'tf.transpose'
+87:29: WARNING: tf.image.resize_bicubic called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bicubic.
+87:29: INFO: Changed tf.image.resize_bicubic call to tf.image.resize(..., method=tf.image.ResizeMethod.BICUBIC).
+91:21: INFO: Added keywords to args of function 'tf.transpose'
+93:21: INFO: Added keywords to args of function 'tf.transpose'
+110:9: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+110:9: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+112:35: INFO: Added keywords to args of function 'tf.transpose'
+117:42: WARNING: tf.image.resize_bilinear called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bilinear.
+117:42: INFO: Changed tf.image.resize_bilinear call to tf.image.resize(..., method=tf.image.ResizeMethod.BILINEAR).
+119:22: INFO: Added keywords to args of function 'tf.transpose'
+138:9: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+138:9: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+140:35: INFO: Added keywords to args of function 'tf.transpose'
+145:42: WARNING: tf.image.resize_bicubic called with align_corners argument, requires manual check: align_corners is not supported by tf.image.resize, the new default transformation is close to what v1 provided. If you require exactly the same transformation as before, use compat.v1.image.resize_bicubic.
+145:42: INFO: Changed tf.image.resize_bicubic call to tf.image.resize(..., method=tf.image.ResizeMethod.BICUBIC).
+147:22: INFO: Added keywords to args of function 'tf.transpose'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/layers/interpolation.py'
+ outputting to 'LLDcode_new/tensorflow_train/layers/interpolation.py'
+--------------------------------------------------------------------------------
+
+11:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/layers/__init__.py'
+ outputting to 'LLDcode_new/tensorflow_train/layers/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/layers/conv_lstm.py'
+ outputting to 'LLDcode_new/tensorflow_train/layers/conv_lstm.py'
+--------------------------------------------------------------------------------
+
+4:19: INFO: Renamed 'tf.nn.rnn_cell.RNNCell' to 'tf.compat.v1.nn.rnn_cell.RNNCell'
+36:15: INFO: Renamed 'tf.nn.rnn_cell.LSTMStateTuple' to 'tf.compat.v1.nn.rnn_cell.LSTMStateTuple'
+46:16: INFO: Renamed 'tf.layers.dropout' to 'tf.compat.v1.layers.dropout'
+51:12: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+51:12: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+52:12: INFO: Added keywords to args of function 'tf.nn.convolution'
+52:12: INFO: Renamed keyword argument for tf.nn.convolution from filter to filters
+54:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+54:16: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+54:57: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+54:57: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+59:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+59:17: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+60:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+60:17: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+72:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+72:17: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+87:16: INFO: Renamed 'tf.nn.rnn_cell.LSTMStateTuple' to 'tf.compat.v1.nn.rnn_cell.LSTMStateTuple'
+92:18: INFO: Renamed 'tf.nn.rnn_cell.RNNCell' to 'tf.compat.v1.nn.rnn_cell.RNNCell'
+168:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+179:46: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+179:46: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+189:46: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+189:46: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+191:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/layers/layers.py'
+ outputting to 'LLDcode_new/tensorflow_train/layers/layers.py'
+--------------------------------------------------------------------------------
+
+3:0: INFO: Not upgrading symbols because `tensorflow.compat.v1` was directly imported as `tf`.
+132:14: ERROR: Using member tf.contrib.keras.layers.UpSampling2D in deprecated module tf.contrib. tf.contrib.keras.layers.UpSampling2D cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+384:26: ERROR: Using member tf.contrib.keras.layers.UpSampling3D in deprecated module tf.contrib. tf.contrib.keras.layers.UpSampling3D cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+475:18: ERROR: Using member tf.contrib.nn.alpha_dropout in deprecated module tf.contrib. tf.contrib.nn.alpha_dropout cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+478:18: ERROR: Using member tf.contrib.nn.alpha_dropout in deprecated module tf.contrib. tf.contrib.nn.alpha_dropout cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/layers/initializers.py'
+ outputting to 'LLDcode_new/tensorflow_train/layers/initializers.py'
+--------------------------------------------------------------------------------
+
+6:20: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+6:20: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/layers/normalizers.py'
+ outputting to 'LLDcode_new/tensorflow_train/layers/normalizers.py'
+--------------------------------------------------------------------------------
+
+6:109: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+6:109: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+6:157: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+6:157: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+7:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+11:25: INFO: Added keywords to args of function 'tf.nn.moments'
+11:64: INFO: Renamed keyword argument for tf.nn.moments from keep_dims to keepdims
+12:14: INFO: Renamed 'tf.rsqrt' to 'tf.math.rsqrt'
+14:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+14:17: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+15:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+15:16: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+27:15: ERROR: Using member tf.contrib.layers.batch_norm in deprecated module tf.contrib. tf.contrib.layers.batch_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+29:15: INFO: Renamed 'tf.layers.batch_normalization' to 'tf.compat.v1.layers.batch_normalization'
+35:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+41:15: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+41:15: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+41:89: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+41:89: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+42:16: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+42:16: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+42:91: INFO: tf.ones_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+42:91: INFO: Renamed 'tf.ones_initializer' to 'tf.compat.v1.ones_initializer'
+44:25: INFO: Added keywords to args of function 'tf.nn.moments'
+44:58: INFO: Renamed keyword argument for tf.nn.moments from keep_dims to keepdims
+51:11: INFO: Renamed 'tf.layers.batch_normalization' to 'tf.compat.v1.layers.batch_normalization'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/networks/__init__.py'
+ outputting to 'LLDcode_new/tensorflow_train/networks/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/networks/unet_lstm.py'
+ outputting to 'LLDcode_new/tensorflow_train/networks/unet_lstm.py'
+--------------------------------------------------------------------------------
+
+10:8: INFO: Renamed 'tf.add_to_collection' to 'tf.compat.v1.add_to_collection'
+20:8: INFO: Renamed 'tf.add_to_collection' to 'tf.compat.v1.add_to_collection'
+21:8: INFO: Renamed 'tf.add_to_collection' to 'tf.compat.v1.add_to_collection'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/networks/unet_lstm_dynamic_MIA.py'
+ outputting to 'LLDcode_new/tensorflow_train/networks/unet_lstm_dynamic_MIA.py'
+--------------------------------------------------------------------------------
+
+21:43: INFO: Renamed 'tf.nn.rnn_cell.LSTMStateTuple' to 'tf.compat.v1.nn.rnn_cell.LSTMStateTuple'
+45:24: INFO: Renamed 'tf.nn.rnn_cell.RNNCell' to 'tf.compat.v1.nn.rnn_cell.RNNCell'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/networks/unet_lstm_dynamic.py'
+ outputting to 'LLDcode_new/tensorflow_train/networks/unet_lstm_dynamic.py'
+--------------------------------------------------------------------------------
+
+37:24: INFO: Renamed 'tf.nn.rnn_cell.RNNCell' to 'tf.compat.v1.nn.rnn_cell.RNNCell'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/networks/unet_base.py'
+ outputting to 'LLDcode_new/tensorflow_train/networks/unet_base.py'
+--------------------------------------------------------------------------------
+
+55:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+59:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+68:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+72:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+78:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+88:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/networks/unet.py'
+ outputting to 'LLDcode_new/tensorflow_train/networks/unet.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/losses/instance_segmentation_losses.py'
+ outputting to 'LLDcode_new/tensorflow_train/losses/instance_segmentation_losses.py'
+--------------------------------------------------------------------------------
+
+28:57: INFO: Renamed keyword argument for tf.nn.l2_normalize from dim to axis
+30:35: INFO: Renamed keyword argument for tf.nn.l2_normalize from dim to axis
+32:21: INFO: Added keywords to args of function 'tf.reduce_sum'
+52:24: INFO: Added keywords to args of function 'tf.reduce_any'
+53:17: INFO: Added keywords to args of function 'tf.norm'
+68:46: INFO: Added keywords to args of function 'tf.transpose'
+70:46: INFO: Added keywords to args of function 'tf.transpose'
+72:53: INFO: Renamed keyword argument for tf.nn.l2_normalize from dim to axis
+75:11: INFO: Added keywords to args of function 'tf.reduce_mean'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/losses/semantic_segmentation_losses.py'
+ outputting to 'LLDcode_new/tensorflow_train/losses/semantic_segmentation_losses.py'
+--------------------------------------------------------------------------------
+
+9:84: INFO: Renamed keyword argument for tf.nn.softmax_cross_entropy_with_logits_v2 from dim to axis
+9:11: INFO: Renamed 'tf.nn.softmax_cross_entropy_with_logits_v2' to 'tf.nn.softmax_cross_entropy_with_logits'
+15:15: INFO: Added keywords to args of function 'tf.reduce_mean'
+22:15: INFO: Added keywords to args of function 'tf.reduce_mean'
+41:54: INFO: Renamed keyword argument for tf.nn.softmax from dim to axis
+44:29: INFO: Added keywords to args of function 'tf.reduce_sum'
+48:16: INFO: Added keywords to args of function 'tf.reduce_sum'
+48:46: INFO: Added keywords to args of function 'tf.reduce_sum'
+51:22: INFO: Added keywords to args of function 'tf.reduce_sum'
+51:52: INFO: Added keywords to args of function 'tf.reduce_sum'
+53:22: INFO: Added keywords to args of function 'tf.reduce_sum'
+53:52: INFO: Added keywords to args of function 'tf.reduce_sum'
+61:15: INFO: Added keywords to args of function 'tf.reduce_mean'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/tensorflow_train/losses/instance_segmentation_losses_MIA.py'
+ outputting to 'LLDcode_new/tensorflow_train/losses/instance_segmentation_losses_MIA.py'
+--------------------------------------------------------------------------------
+
+43:35: INFO: Renamed keyword argument for tf.nn.l2_normalize from dim to axis
+46:52: INFO: Renamed keyword argument for tf.nn.l2_normalize from dim to axis
+50:21: INFO: Added keywords to args of function 'tf.reduce_sum'
+68:17: INFO: Added keywords to args of function 'tf.boolean_mask'
+69:17: INFO: Added keywords to args of function 'tf.boolean_mask'
+80:23: INFO: Added keywords to args of function 'tf.shape'
+81:20: INFO: Added keywords to args of function 'tf.shape'
+97:24: INFO: Added keywords to args of function 'tf.cond'
+97:43: INFO: Renamed 'tf.count_nonzero' to 'tf.math.count_nonzero'
+106:59: INFO: Added keywords to args of function 'tf.while_loop'
+108:13: INFO: Added keywords to args of function 'tf.cond'
+109:13: INFO: Added keywords to args of function 'tf.cond'
+111:17: INFO: Added keywords to args of function 'tf.cond'
+121:49: INFO: Added keywords to args of function 'tf.reduce_max'
+133:24: INFO: Added keywords to args of function 'tf.cond'
+133:43: INFO: Renamed 'tf.count_nonzero' to 'tf.math.count_nonzero'
+142:59: INFO: Added keywords to args of function 'tf.while_loop'
+144:13: INFO: Added keywords to args of function 'tf.cond'
+145:13: INFO: Added keywords to args of function 'tf.cond'
+147:17: INFO: Added keywords to args of function 'tf.cond'
+155:66: INFO: Renamed keyword argument for tf.nn.l2_normalize from dim to axis
+158:9: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+158:9: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+199:44: INFO: Added keywords to args of function 'tf.linalg.norm'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/graph/run_graph.py'
+ outputting to 'LLDcode_new/graph/run_graph.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'LLDcode/graph/node.py'
+ outputting to 'LLDcode_new/graph/node.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
