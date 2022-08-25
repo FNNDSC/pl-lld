@@ -1,6 +1,6 @@
 
 import os
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import numpy as np
 import sys
 from tensorflow_train.utils.summary_handler import SummaryHandler, create_summary_placeholder

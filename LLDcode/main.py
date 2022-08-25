@@ -167,6 +167,8 @@ class MainLoop(MainLoopBase):
         # finalize loss values
         self.val_loss_aggregator.finalize(self.current_iter)
         utils.io.landmark.save_points_csv(landmarks, self.output_file_for_current_iteration('prediction.csv'))
+        
+# Main driver method        
 if __name__ == '__main__':
     # change networks
 #atsai    networks = ['scn_mmwhs', 'scn', 'unet', 'downsampling', 'conv']
