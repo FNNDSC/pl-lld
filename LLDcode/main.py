@@ -144,6 +144,7 @@ class MainLoop(MainLoopBase):
 
         landmarks = {}
         tic=time.perf_counter()
+
         for i in range(self.dataset_val.num_entries()):
             dataset_entry = self.dataset_val.get_next()
             current_id = dataset_entry['id']['image_id']
@@ -156,6 +157,7 @@ class MainLoop(MainLoopBase):
             tensorflow_train.utils.tensorflow_util.print_progress_bar(i, self.dataset_val.num_entries())
             landmarks[current_id] = predicted_landmarks
             landmark_statistics.add_landmarks(current_id, predicted_landmarks, groundtruth_landmarks, normalization_factor=50, normalization_indizes=[1, 5])
+
         toc=time.perf_counter()
         print(f"atsai time test duration = {toc-tic:4.4f} seconds")
         tensorflow_train.utils.tensorflow_util.print_progress_bar(self.dataset_val.num_entries(), self.dataset_val.num_entries())
@@ -170,7 +172,7 @@ class MainLoop(MainLoopBase):
 if __name__ == '__main__':
     # change networks
 #atsai    networks = ['scn_mmwhs', 'scn', 'unet', 'downsampling', 'conv']
-    networks = ['conv']
+    networks = ['scn_mmwhs', 'scn', 'unet', 'downsampling', 'conv']
     for network in networks:
 #atsai        for cv in [1, 2, 3]:
         for cv in [0]:

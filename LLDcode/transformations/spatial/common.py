@@ -65,6 +65,7 @@ def create_composite(dim, transformations, merge_affine=False):
     compos = sitk.Transform(dim, sitk.sitkIdentity)
     for transformation in transformations:
         compos.AddTransform(transformation)
+   
     return compos
 
 
