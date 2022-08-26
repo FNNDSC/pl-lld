@@ -21,12 +21,13 @@
 #   docker run -ti -e HOST_IP=$(ip route | grep -v docker | awk '{if(NF==11) print $9}') --entrypoint /bin/bash local/pl-lld
 #
 
-FROM tensorflow/tensorflow:1.3.0-py3
+FROM tensorflow/tensorflow:latest-gpu-py3
 LABEL maintainer="FNNDSC <dev@babyMRI.org>"
 
 WORKDIR /usr/local/src
 
 COPY requirements.txt .
+RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r requirements.txt
 
 
