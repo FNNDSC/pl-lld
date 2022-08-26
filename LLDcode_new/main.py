@@ -157,7 +157,7 @@ class MainLoop(MainLoopBase):
             landmarks[current_id] = predicted_landmarks
             landmark_statistics.add_landmarks(current_id, predicted_landmarks, groundtruth_landmarks, normalization_factor=50, normalization_indizes=[1, 5])
         toc=time.perf_counter()
-        print(f"atsai time test duration = {toc-tic:4.4f} seconds")
+        #print("atsai time test duration = {} seconds".format(toc-tic:4.4f))
         tensorflow_train.utils.tensorflow_util.print_progress_bar(self.dataset_val.num_entries(), self.dataset_val.num_entries())
         print('ipe', landmark_statistics.get_ipe_statistics())
         print('pe', landmark_statistics.get_pe_statistics())

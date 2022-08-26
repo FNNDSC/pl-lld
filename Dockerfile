@@ -27,6 +27,9 @@ LABEL maintainer="FNNDSC <dev@babyMRI.org>"
 WORKDIR /usr/local/src
 
 COPY requirements.txt .
+RUN pip install --upgrade pip
+RUN pip3 install opencv-python-headless
+RUN pip install -U pip setuptools
 RUN pip install -r requirements.txt
 
 
