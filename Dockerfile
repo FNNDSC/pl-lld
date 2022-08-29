@@ -21,7 +21,7 @@
 #   docker run -ti -e HOST_IP=$(ip route | grep -v docker | awk '{if(NF==11) print $9}') --entrypoint /bin/bash local/pl-lld
 #
 
-FROM tensorflow/tensorflow:latest-gpu-py3
+FROM tensorflow/tensorflow:latest-py3
 LABEL maintainer="FNNDSC <dev@babyMRI.org>"
 
 WORKDIR /usr/local/src

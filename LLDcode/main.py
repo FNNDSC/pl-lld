@@ -172,7 +172,7 @@ class MainLoop(MainLoopBase):
 if __name__ == '__main__':
     # change networks
 #atsai    networks = ['scn_mmwhs', 'scn', 'unet', 'downsampling', 'conv']
-    networks = ['scn_mmwhs', 'scn', 'unet', 'downsampling', 'conv']
+    networks = ['unet']
     for network in networks:
 #atsai        for cv in [1, 2, 3]:
         for cv in [0]:
