@@ -192,12 +192,12 @@ class MainLoopBase(object):
                 if (self.current_iter % self.snapshot_iter) == 0 and not self.first_iteration:
                     self.snapshot()
                 # test
-                #if (self.current_iter % self.test_iter) == 0 and (self.test_initialization or not self.first_iteration):
-                    #self.test()
+                if (self.current_iter % self.test_iter) == 0 and (self.test_initialization or not self.first_iteration):
+                    self.test()
                 # do not train in last iteration
-                if self.current_iter < self.max_iter:
-                    print("Run training")
-                    self.train()
+                #if self.current_iter < self.max_iter:
+                    #print("Run training")
+                    #self.train()
                 self.current_iter += 1
                 self.first_iteration = False
                 sys.stdout.flush()

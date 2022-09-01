@@ -21,10 +21,23 @@
 #   docker run -ti -e HOST_IP=$(ip route | grep -v docker | awk '{if(NF==11) print $9}') --entrypoint /bin/bash local/pl-lld
 #
 
-FROM tensorflow/tensorflow:latest-py3
+FROM tensorflow/tensorflow:latest-gpu-py3
 LABEL maintainer="FNNDSC <dev@babyMRI.org>"
 
-WORKDIR /usr/local/src
+# Install `wget` to install `miniconda`
+RUN apt-get install wget
+
+# Install miniconda
+ENV CONDA_DIR /opt/conda
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.1-Linux-x86_64.sh -O ~/miniconda.sh && \
+     /bin/bash ~/miniconda.sh -b -u -p /opt/conda
+
+# Put conda in path so we can use conda activate
+ENV PATH=$CONDA_DIR/bin:$PATH
+
+# install the cuda version required to work with tensorflow
+# chcek here: https://www.tensorflow.org/install/source#gpu to find out the right version
+RUN conda install -c conda-forge cudatoolkit=10.0
 
 COPY requirements.txt .
 RUN pip install --upgrade pip setuptools wheel
