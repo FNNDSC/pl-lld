@@ -63,7 +63,8 @@ class MainLoopBase(object):
         if self.load_model_filename is not None:
             model_filename = self.load_model_filename
         else:
-            model_filename = os.path.join(self.output_folder, 'weights/model-' + str(self.current_iter))
+            model_filename = os.path.join(self.output_folder, 'weights/model-15000')
+            #model_filename = os.path.join(self.output_folder, 'weights/model-' + str(self.current_iter))
         print('Restoring model ' + model_filename)
         self.restore_variables(self.sess, model_filename)
 
@@ -181,8 +182,10 @@ class MainLoopBase(object):
             print('Output folder:', self.output_folder)
 
     def run(self):
+        print("*************INIT ALL****************")
         self.init_all()
         if self.current_iter > 0 or self.load_model_filename is not None:
+            print("*************LOADING MODEL****************")
             self.load_model()
         print('Starting main loop')
         self.print_training_parameters()
