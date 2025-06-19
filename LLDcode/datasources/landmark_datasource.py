@@ -1,8 +1,8 @@
 
-import utils.io.landmark
-from utils.landmark.common import Landmark
+import LLDcode.utils.io.landmark
+from LLDcode.utils.landmark.common import Landmark
 import os
-from datasources.datasource_base import DataSourceBase
+from LLDcode.datasources.datasource_base import DataSourceBase
 
 class LandmarkDataSource(DataSourceBase):
     """
@@ -36,9 +36,9 @@ class LandmarkDataSource(DataSourceBase):
         """
         ext = os.path.splitext(self.point_list_file_name)[1]
         if ext == '.csv':
-            self.point_list = utils.io.landmark.load_csv(self.point_list_file_name, self.num_points, self.dim)
+            self.point_list = LLDcode.utils.io.landmark.load_csv(self.point_list_file_name, self.num_points, self.dim)
         if ext == '.idl':
-            self.point_list = utils.io.landmark.load_idl(self.point_list_file_name, self.num_points, self.dim)
+            self.point_list = LLDcode.utils.io.landmark.load_idl(self.point_list_file_name, self.num_points, self.dim)
 
     def get_landmarks(self, image_id):
         """
@@ -99,7 +99,7 @@ class LandmarkDataSourceMultiple(DataSourceBase):
         """
         ext = os.path.splitext(self.multiple_point_list_file_name)[1]
         if ext == '.csv':
-            self.point_list = utils.io.landmark.load_multi_csv(self.multiple_point_list_file_name, self.num_points, self.dim)
+            self.point_list = LLDcode.utils.io.landmark.load_multi_csv(self.multiple_point_list_file_name, self.num_points, self.dim)
 
     def get_landmarks(self, image_id, instance_id):
         """

@@ -1,7 +1,7 @@
 
 import tensorflow as tf
-from tensorflow_train.utils.data_format import get_image_axes, get_channel_index
-from tensorflow_train.utils.tensorflow_util import reduce_mean_weighted
+from LLDcode.tensorflow_train.utils.data_format import get_image_axes, get_channel_index
+from LLDcode.tensorflow_train.utils.tensorflow_util import reduce_mean_weighted
 
 
 def softmax_cross_entropy_with_logits(labels, logits, weights=None, data_format='channels_first'):

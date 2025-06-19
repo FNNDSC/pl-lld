@@ -1,7 +1,7 @@
 
 import numpy as np
 
-from utils.landmark.common import Landmark
+from LLDcode.utils.landmark.common import Landmark
 
 
 class SpinePostprocessing(object):

@@ -1,13 +1,13 @@
 
 import SimpleITK as sitk
 import numpy as np
-import utils.geometry
-import utils.sitk_image
-import utils.sitk_np
-import utils.np_image
-import utils.io.image
-import utils.io.text
-import utils.io.common
+import LLDcode.utils.geometry
+import LLDcode.utils.sitk_image
+import LLDcode.utils.sitk_np
+import LLDcode.utils.np_image
+import LLDcode.utils.io.image
+import LLDcode.utils.io.text
+import LLDcode.utils.io.common
 
 
 class SegmentationTest(object):

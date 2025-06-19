@@ -1,6 +1,6 @@
 
 import tensorflow as tf
-from tensorflow_train.utils.tensorflow_util import reduce_mean_masked, reduce_sum_masked, masked_bit, save_divide, save_reduce_mean, most_significant_bit, reduce_median_masked
+from LLDcode.tensorflow_train.utils.tensorflow_util import reduce_mean_masked, reduce_sum_masked, masked_bit, save_divide, save_reduce_mean, most_significant_bit, reduce_median_masked
 
 
 def cosine_embedding_single_instance_loss(embeddings, target_instances_mask, other_instances_mask, normalized_embeddings=True, term_1_2_normalization='individual', term_0_squared=False, term_1_squared=False, return_h_norm=False,  use_first_frame_for_mean=False, is_background=False, data_format='channels_first'):

@@ -1,6 +1,6 @@
 
 import numpy as np
-from utils import random
+from LLDcode.utils import random
 
 
 def shift_scale_clamp(input_image,

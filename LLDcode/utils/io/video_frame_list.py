@@ -1,7 +1,7 @@
 
-import utils.io.text
+import LLDcode.utils.io.text
 from collections import OrderedDict
-from utils.random import int_uniform, bool_bernoulli
+from LLDcode.utils.random import int_uniform, bool_bernoulli
 
 
 class VideoFrameList(object):

@@ -4,31 +4,31 @@ import numpy as np
 import tensorflow as tf
 from collections import OrderedDict
 
-import tensorflow_train
-import tensorflow_train.utils.tensorflow_util
-from tensorflow_train.utils.data_format import get_batch_channel_image_size
-import utils.io.image
-import utils.io.landmark
-import utils.io.text
-from tensorflow_train.data_generator import DataGenerator
-from tensorflow_train.train_loop import MainLoopBase
-from utils.landmark.heatmap_test import HeatmapTest
-from utils.landmark.landmark_statistics import LandmarkStatistics
+import LLDcode.tensorflow_train
+import LLDcode.tensorflow_train.utils.tensorflow_util
+from LLDcode.tensorflow_train.utils.data_format import get_batch_channel_image_size
+import LLDcode.utils.io.image
+import LLDcode.utils.io.landmark
+import LLDcode.utils.io.text
+from LLDcode.tensorflow_train.data_generator import DataGenerator
+from LLDcode.tensorflow_train.train_loop import MainLoopBase
+from LLDcode.utils.landmark.heatmap_test import HeatmapTest
+from LLDcode.utils.landmark.landmark_statistics import LandmarkStatistics
 
 from datetime import datetime
 import time
 
-from dataset import Dataset
-from network import network_scn, network_unet, network_downsampling, network_conv, network_scn_mmwhs
+from LLDcode.dataset import Dataset
+from LLDcode.network import network_scn, network_unet, network_downsampling, network_conv, network_scn_mmwhs
 
 
 class MainLoop(MainLoopBase):
-    def __init__(self, cv, network_id):
+    def __init__(self, inputdir, outputdir, cv, network_id):
         super().__init__()
         self.cv = cv
         self.network_id = network_id
         #self.output_folder = '{}_cv{}'.format(network_id, cv) + '/' + self.output_folder_timestamp()
-        self.output_folder = 'conv_cv0/2022-09-02_17-19-26'
+        self.output_folder = outputdir
         self.batch_size = 8
 #atsai        self.learning_rate = 0.0000001  # TODO adapt learning rates for different networks for faster training
 #atsai        self.max_iter = 20000
@@ -69,7 +69,7 @@ class MainLoop(MainLoopBase):
         self.data_format = 'channels_first'
         self.save_debug_images = False
 #atsai        self.base_folder = 'hand_xray_dataset/'
-        self.base_folder = 'EOS_dataset/'
+        self.base_folder = inputdir
         dataset = Dataset(self.image_size,
                           self.heatmap_size,
                           self.num_landmarks,
@@ -118,7 +118,7 @@ class MainLoop(MainLoopBase):
         self.optimizer = tf.train.MomentumOptimizer(learning_rate=self.learning_rate, momentum=0.99, use_nesterov=True).minimize(self.loss)
 
         # build val graph
-        self.val_placeholders = tensorflow_train.utils.tensorflow_util.create_placeholders(data_generator_entries_val, shape_prefix=[1])
+        self.val_placeholders = LLDcode.tensorflow_train.utils.tensorflow_util.create_placeholders(data_generator_entries_val, shape_prefix=[1])
         self.image_val = self.val_placeholders['image']
         self.landmarks_val = self.val_placeholders['landmarks']
         self.prediction_val = net(self.image_val, num_landmarks=self.num_landmarks, is_training=False, data_format=self.data_format)
@@ -154,14 +154,14 @@ class MainLoop(MainLoopBase):
             reference_image = datasources['image_datasource']
             groundtruth_landmarks = datasources['landmarks_datasource']
             image, prediction, transform = self.test_full_image(dataset_entry)
-            utils.io.image.write_np((prediction * 128).astype(np.int8), self.output_file_for_current_iteration(current_id + '_heatmap.mha'))
+            LLDcode.utils.io.image.write_np((prediction * 128).astype(np.int8), self.output_file_for_current_iteration(current_id + '_heatmap.mha'))
             predicted_landmarks = heatmap_test.get_landmarks(prediction, reference_image, transformation=transform)
-            tensorflow_train.utils.tensorflow_util.print_progress_bar(i, self.dataset_val.num_entries())
+            LLDcode.tensorflow_train.utils.tensorflow_util.print_progress_bar(i, self.dataset_val.num_entries())
             landmarks[current_id] = predicted_landmarks
             landmark_statistics.add_landmarks(current_id, predicted_landmarks, groundtruth_landmarks, normalization_factor=50, normalization_indizes=[1, 5])
         toc=time.perf_counter()
         print(f"atsai time test duration = {toc-tic:4.4f} seconds")
-        tensorflow_train.utils.tensorflow_util.print_progress_bar(self.dataset_val.num_entries(), self.dataset_val.num_entries())
+        LLDcode.tensorflow_train.utils.tensorflow_util.print_progress_bar(self.dataset_val.num_entries(), self.dataset_val.num_entries())
         print('ipe', landmark_statistics.get_ipe_statistics())
         print('pe', landmark_statistics.get_pe_statistics())
         print('outliers', landmark_statistics.get_num_outliers([2.0, 4.0, 10.0]))
@@ -169,7 +169,7 @@ class MainLoop(MainLoopBase):
         print('atsai num training data', self.dataset_train.num_entries())
         # finalize loss values
         self.val_loss_aggregator.finalize(self.current_iter)
-        utils.io.landmark.save_points_csv(landmarks, self.output_file_for_current_iteration('prediction.csv'))
+        LLDcode.utils.io.landmark.save_points_csv(landmarks, self.output_file_for_current_iteration('prediction.csv'))
         
         
 if __name__ == '__main__':
@@ -180,6 +180,6 @@ if __name__ == '__main__':
 #atsai        for cv in [1, 2, 3]:
         for cv in [0]:
             loop = MainLoop(cv, network)
-            loop.run_test()
+            loop.run()
 
 

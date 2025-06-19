@@ -1,6 +1,6 @@
 
-from iterators.iterator_base import IteratorBase
-import utils.io.text
+from LLDcode.iterators.iterator_base import IteratorBase
+import LLDcode.utils.io.text
 import random
 import multiprocessing
 import os
@@ -52,7 +52,7 @@ class IdListIterator(IteratorBase):
         """
         ext = os.path.splitext(self.id_list_file_name)[1]
         if ext in ['.csv', '.txt']:
-            self.id_list = utils.io.text.load_list_csv(self.id_list_file_name)
+            self.id_list = LLDcode.utils.io.text.load_list_csv(self.id_list_file_name)
         if self.whole_list_postprocessing is not None:
             self.id_list = self.whole_list_postprocessing(self.id_list)
         print('loaded %i ids' % len(self.id_list))

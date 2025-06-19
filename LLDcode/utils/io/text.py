@@ -1,7 +1,7 @@
 
 import csv
 import re
-from utils.io.common import create_directories_for_file_name
+from LLDcode.utils.io.common import create_directories_for_file_name
 
 
 def load_dict_csv(file_name, value_type=str):

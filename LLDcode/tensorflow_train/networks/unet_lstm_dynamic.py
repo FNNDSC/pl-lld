@@ -1,9 +1,9 @@
 
 import tensorflow as tf
-from tensorflow_train.layers.conv_lstm import ConvGRUCell
-from tensorflow_train.networks.unet_base import UnetBase
-from tensorflow_train.utils.data_format import get_batch_channel_image_size
-from tensorflow_train.layers.layers import conv2d, add, max_pool2d, avg_pool2d, upsample2d, dropout, concat_channels, conv2d_transpose
+from LLDcode.tensorflow_train.layers.conv_lstm import ConvGRUCell
+from LLDcode.tensorflow_train.networks.unet_base import UnetBase
+from LLDcode.tensorflow_train.utils.data_format import get_batch_channel_image_size
+from LLDcode.tensorflow_train.layers.layers import conv2d, add, max_pool2d, avg_pool2d, upsample2d, dropout, concat_channels, conv2d_transpose
 
 
 class UnetRecurrentWithStates(UnetBase):

@@ -1,10 +1,10 @@
 
-from utils.io.common import create_directories_for_file_name
-from transformations.intensity.np.normalize import scale_min_max, scale
-from utils.sitk_image import label_to_rgb, set_spacing_origin_direction
+from LLDcode.utils.io.common import create_directories_for_file_name
+from LLDcode.transformations.intensity.np.normalize import scale_min_max, scale
+from LLDcode.utils.sitk_image import label_to_rgb, set_spacing_origin_direction
 import SimpleITK as sitk
 import numpy as np
-import utils.np_image
+import LLDcode.utils.np_image
 import os
 
 

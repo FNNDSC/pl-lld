@@ -1,9 +1,9 @@
 
 import SimpleITK as sitk
-import utils.sitk_np
+import LLDcode.utils.sitk_np
 import numpy as np
-import utils.np_image
-import utils.sitk_np
+import LLDcode.utils.np_image
+import LLDcode.utils.sitk_np
 
 
 def get_sitk_interpolator(interpolator):

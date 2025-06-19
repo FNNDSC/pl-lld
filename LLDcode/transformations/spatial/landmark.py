@@ -1,5 +1,5 @@
-from transformations.spatial.translation import TranslateTransformBase
-from utils.landmark.common import get_mean_coords
+from LLDcode.transformations.spatial.translation import TranslateTransformBase
+from LLDcode.utils.landmark.common import get_mean_coords
 
 
 class Center(TranslateTransformBase):

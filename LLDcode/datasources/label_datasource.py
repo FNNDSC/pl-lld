@@ -1,6 +1,6 @@
 
 import utils.io.text
-from datasources.datasource_base import DataSourceBase
+from LLDcode.datasources.datasource_base import DataSourceBase
 
 
 class LabelDatasource(DataSourceBase):

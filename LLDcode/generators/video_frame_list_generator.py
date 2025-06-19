@@ -1,5 +1,5 @@
 
-from generators.generator_base import GeneratorBase
+from LLDcode.generators.generator_base import GeneratorBase
 import numpy as np
 
 

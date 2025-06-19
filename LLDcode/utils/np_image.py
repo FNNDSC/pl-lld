@@ -5,7 +5,7 @@ import math
 import skimage.morphology
 import skimage.measure
 import skimage.draw
-from transformations.intensity.np.smooth import gaussian
+from LLDcode.transformations.intensity.np.smooth import gaussian
 
 
 def find_maximum_coord_in_image(image):

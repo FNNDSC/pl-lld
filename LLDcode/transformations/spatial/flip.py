@@ -1,7 +1,7 @@
 import SimpleITK as sitk
 
-from transformations.spatial.base import SpatialTransformBase
-from utils.random import bool_bernoulli
+from LLDcode.transformations.spatial.base import SpatialTransformBase
+from LLDcode.utils.random import bool_bernoulli
 
 
 class FlipTransformBase(SpatialTransformBase):

@@ -2,17 +2,17 @@
 import os
 import numpy as np
 import SimpleITK as sitk
-from datasets.reference_image_transformation_dataset import ReferenceTransformationDataset
-from datasources.image_datasource import ImageDataSource
-from datasources.cached_image_datasource import CachedImageDataSource
-from datasources.landmark_datasource import LandmarkDataSource
-from generators.image_generator import ImageGenerator
-from generators.landmark_generator import LandmarkGeneratorHeatmap, LandmarkGenerator
-from iterators.id_list_iterator import IdListIterator
-from transformations.intensity.np.shift_scale_clamp import ShiftScaleClamp
-from transformations.spatial import translation, scale, composite, rotation, deformation, flip
-from transformations.intensity.np.normalize import normalize_robust
-from utils.sitk_image import reduce_dimension
+from LLDcode.datasets.reference_image_transformation_dataset import ReferenceTransformationDataset
+from LLDcode.datasources.image_datasource import ImageDataSource
+from LLDcode.datasources.cached_image_datasource import CachedImageDataSource
+from LLDcode.datasources.landmark_datasource import LandmarkDataSource
+from LLDcode.generators.image_generator import ImageGenerator
+from LLDcode.generators.landmark_generator import LandmarkGeneratorHeatmap, LandmarkGenerator
+from LLDcode.iterators.id_list_iterator import IdListIterator
+from LLDcode.transformations.intensity.np.shift_scale_clamp import ShiftScaleClamp
+from LLDcode.transformations.spatial import translation, scale, composite, rotation, deformation, flip
+from LLDcode.transformations.intensity.np.normalize import normalize_robust
+from LLDcode.utils.sitk_image import reduce_dimension
 
 
 class Dataset(object):

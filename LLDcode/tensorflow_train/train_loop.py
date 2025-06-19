@@ -3,14 +3,15 @@ import os
 import tensorflow as tf
 import numpy as np
 import sys
-from tensorflow_train.utils.summary_handler import SummaryHandler, create_summary_placeholder
-from utils.io.common import create_directories, copy_files_to_folder
+from LLDcode.tensorflow_train.utils.summary_handler import SummaryHandler, create_summary_placeholder
+from LLDcode.utils.io.common import create_directories, copy_files_to_folder
 import datetime
 from collections import OrderedDict
 from glob import glob
 
 class MainLoopBase(object):
     def __init__(self):
+        self.saver = None
         config = tf.ConfigProto()
         config.gpu_options.allow_growth = True
         self.sess = tf.Session(config=config)
@@ -63,8 +64,8 @@ class MainLoopBase(object):
         if self.load_model_filename is not None:
             model_filename = self.load_model_filename
         else:
-            model_filename = os.path.join(self.output_folder, 'weights/model-15000')
-            #model_filename = os.path.join(self.output_folder, 'weights/model-' + str(self.current_iter))
+            #model_filename = os.path.join(self.output_folder, 'weights/model-15000')
+            model_filename = os.path.join(self.output_folder, 'weights/model-' + str(self.current_iter))
         print('Restoring model ' + model_filename)
         self.restore_variables(self.sess, model_filename)
 
@@ -198,9 +199,9 @@ class MainLoopBase(object):
                 if (self.current_iter % self.test_iter) == 0 and (self.test_initialization or not self.first_iteration):
                     self.test()
                 # do not train in last iteration
-                #if self.current_iter < self.max_iter:
-                    #print("Run training")
-                    #self.train()
+                if self.current_iter < self.max_iter:
+                    print("Run training")
+                    self.train()
                 self.current_iter += 1
                 self.first_iteration = False
                 sys.stdout.flush()

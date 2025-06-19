@@ -1,11 +1,11 @@
 
 import tensorflow as tf
-from tensorflow_train.utils.data_format import get_channel_index
-from tensorflow_train.layers.layers import conv2d, avg_pool2d, concat_channels
-from tensorflow_train.layers.interpolation import upsample2d_linear
-from tensorflow_train.layers.initializers import he_initializer
-from tensorflow_train.networks.unet import UnetClassic2D
-from tensorflow_train.networks.unet_base import UnetBase
+from LLDcode.tensorflow_train.utils.data_format import get_channel_index
+from LLDcode.tensorflow_train.layers.layers import conv2d, avg_pool2d, concat_channels
+from LLDcode.tensorflow_train.layers.interpolation import upsample2d_linear
+from LLDcode.tensorflow_train.layers.initializers import he_initializer
+from LLDcode.tensorflow_train.networks.unet import UnetClassic2D
+from LLDcode.tensorflow_train.networks.unet_base import UnetBase
 
 
 def network_scn(input, num_landmarks, is_training, data_format='channels_first'):

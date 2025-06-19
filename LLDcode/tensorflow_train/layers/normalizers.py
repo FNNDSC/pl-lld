@@ -1,6 +1,6 @@
 
 import tensorflow as tf
-from tensorflow_train.utils.data_format import get_channel_index, get_image_axes, get_tf_data_format_2d
+from LLDcode.tensorflow_train.utils.data_format import get_channel_index, get_image_axes, get_tf_data_format_2d
 
 
 def instance_norm(inputs, is_training, name='', data_format='channels_first', epsilon=1e-5, beta_initializer=tf.constant_initializer(0.0), gamma_initializer=tf.constant_initializer(1.0)):

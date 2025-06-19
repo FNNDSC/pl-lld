@@ -1,6 +1,6 @@
 
-from generators.generator_base import GeneratorBase
-import transformations.spatial.common
+from LLDcode.generators.generator_base import GeneratorBase
+import LLDcode.transformations.spatial.common
 
 
 class TransformationGeneratorBase(GeneratorBase):

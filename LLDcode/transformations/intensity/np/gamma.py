@@ -1,6 +1,6 @@
 
 import numpy as np
-from transformations.intensity.np.normalize import scale
+from LLDcode.transformations.intensity.np.normalize import scale
 
 
 def change_gamma_unnormalized(img, l):

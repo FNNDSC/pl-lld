@@ -1,9 +1,9 @@
 
 import numpy as np
 import tensorflow as tf
-from tensorflow_train.layers.initializers import he_initializer, zeros_initializer
-from tensorflow_train.utils.data_format import get_channel_index
-from tensorflow_train.utils.print_utils import print_conv_parameters, print_pool_parameters, print_dropout_parameters, print_upsample_parameters, print_shape_parameters, print_dense_parameters
+from LLDcode.tensorflow_train.layers.initializers import he_initializer, zeros_initializer
+from LLDcode.tensorflow_train.utils.data_format import get_channel_index
+from LLDcode.tensorflow_train.utils.print_utils import print_conv_parameters, print_pool_parameters, print_dropout_parameters, print_upsample_parameters, print_shape_parameters, print_dense_parameters
 
 
 debug_print_conv = True

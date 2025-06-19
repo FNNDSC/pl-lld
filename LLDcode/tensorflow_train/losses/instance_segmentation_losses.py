@@ -1,7 +1,7 @@
 
 import tensorflow as tf
-from tensorflow_train.utils.data_format import get_image_axes
-from tensorflow_train.utils.tensorflow_util import reduce_mean_masked, reduce_sum_masked
+from LLDcode.tensorflow_train.utils.data_format import get_image_axes
+from LLDcode.tensorflow_train.utils.tensorflow_util import reduce_mean_masked, reduce_sum_masked
 
 
 def cosine_embedding_single_instance_loss(embeddings, target_instances_mask, other_instances_mask, embeddings_norm=None, normalize=False, l=1.0, term_1_squared=False, term_2_factor=0, use_first_frame_for_mean=False, data_format='channels_first'):

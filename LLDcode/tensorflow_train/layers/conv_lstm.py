@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow_train.layers.layers import conv2d, conv3d
+from LLDcode.tensorflow_train.layers.layers import conv2d, conv3d
 
 class ConvLSTMCell(tf.nn.rnn_cell.RNNCell):
     """A LSTM cell with convolutions instead of multiplications.

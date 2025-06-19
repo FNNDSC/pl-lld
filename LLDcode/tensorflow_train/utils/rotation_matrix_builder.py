@@ -1,5 +1,5 @@
 
-from utils.random import float_uniform
+from LLDcode.utils.random import float_uniform
 import numpy as np
 import math
 import tensorflow as tf

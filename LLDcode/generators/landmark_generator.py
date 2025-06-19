@@ -1,11 +1,11 @@
 
 import numpy as np
-from utils.landmark.heatmap_image_generator import HeatmapImageGenerator
-import utils.landmark.transform
-import transformations.spatial.common
+from LLDcode.utils.landmark.heatmap_image_generator import HeatmapImageGenerator
+import LLDcode.utils.landmark.transform
+import LLDcode.transformations.spatial.common
 import functools
 import copy
-from generators.transformation_generator_base import TransformationGeneratorBase
+from LLDcode.generators.transformation_generator_base import TransformationGeneratorBase
 
 
 class LandmarkGeneratorBase(TransformationGeneratorBase):
@@ -52,7 +52,7 @@ class LandmarkGeneratorBase(TransformationGeneratorBase):
         :param transformation: transformation to check
         :return: True, if any dimension of the transformation is flipped, False, otherwise
         """
-        flipped = transformations.spatial.common.flipped_dimensions(transformation, self.output_size)
+        flipped = LLDcode.transformations.spatial.common.flipped_dimensions(transformation, self.output_size)
         is_flipped = functools.reduce(lambda a, b: a ^ b, flipped, 0)
         return is_flipped
 
@@ -117,7 +117,7 @@ class LandmarkGeneratorBase(TransformationGeneratorBase):
         :param transformation: transformation to perform
         :return: list of transformed landmarks
         """
-        return utils.landmark.transform.transform_landmarks_inverse(landmarks, transformation, self.output_size, self.output_spacing, self.min_max_transformation_distance)
+        return LLDcode.utils.landmark.transform.transform_landmarks_inverse(landmarks, transformation, self.output_size, self.output_spacing, self.min_max_transformation_distance)
 
     def preprocess_landmarks(self, landmarks, transformation, flip):
         """

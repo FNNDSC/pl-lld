@@ -9,6 +9,7 @@
 #
 
 from chrisapp.base import ChrisApp
+from    LLDcode.main        import MainLoop
 
 
 Gstr_title = r"""
@@ -126,6 +127,12 @@ class Lld(ChrisApp):
         """
         print(Gstr_title)
         print('Version: %s' % self.get_version())
+        networks = ['conv']
+        for network in networks:
+            # atsai        for cv in [1, 2, 3]:
+            for cv in [0]:
+                loop = MainLoop(options.inputdir, options.outputdir,cv, network)
+                loop.run()
 
     def show_man_page(self):
         """

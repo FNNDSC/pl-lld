@@ -1,7 +1,7 @@
 
 import tensorflow as tf
-from tensorflow_train.layers.layers import concat_channels, add, dropout
-from tensorflow_train.networks.unet_base import UnetBase, UnetBase2D, UnetBase3D
+from LLDcode.tensorflow_train.layers.layers import concat_channels, add, dropout
+from LLDcode.tensorflow_train.networks.unet_base import UnetBase, UnetBase2D, UnetBase3D
 
 
 class UnetClassic(UnetBase):

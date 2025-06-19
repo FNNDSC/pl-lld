@@ -1,6 +1,6 @@
 
-from iterators.iterator_base import IteratorBase
-import utils.io.text
+from LLDcode.iterators.iterator_base import IteratorBase
+import LLDcode.utils.io.text
 import random
 import multiprocessing
 import os

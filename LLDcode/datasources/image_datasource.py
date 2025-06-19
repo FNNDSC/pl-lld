@@ -1,9 +1,9 @@
 
 import SimpleITK as sitk
 import os
-import utils.io.image
+import LLDcode.utils.io.image
 import numpy as np
-from datasources.datasource_base import DataSourceBase
+from LLDcode.datasources.datasource_base import DataSourceBase
 
 
 class ImageDataSource(DataSourceBase):
@@ -70,7 +70,7 @@ class ImageDataSource(DataSourceBase):
         :return: The loaded sitk image.
         """
         try:
-            return utils.io.image.read(path, self.sitk_pixel_type)
+            return LLDcode.utils.io.image.read(path, self.sitk_pixel_type)
         except:
             if self.return_none_if_not_found:
                 return None

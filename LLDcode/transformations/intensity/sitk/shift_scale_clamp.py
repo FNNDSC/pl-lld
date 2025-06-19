@@ -1,7 +1,7 @@
 
 import SimpleITK as sitk
-from utils import random
-from transformations.intensity.sitk.normalize import min_max
+from LLDcode.utils import random
+from LLDcode.transformations.intensity.sitk.normalize import min_max
 
 
 def shift_scale(input_image, shift=None, scale=None):

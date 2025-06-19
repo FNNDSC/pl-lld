@@ -1,6 +1,6 @@
 
 import tensorflow as tf
-from tensorflow_train.data_generator_base import DataGeneratorBase
+from LLDcode.tensorflow_train.data_generator_base import DataGeneratorBase
 
 class DataGenerator(DataGeneratorBase):
     """

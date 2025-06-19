@@ -1,6 +1,6 @@
 
 import numpy as np
-from generators.generator_base import GeneratorBase
+from LLDcode.generators.generator_base import GeneratorBase
 
 
 class LabelGenerator(GeneratorBase):

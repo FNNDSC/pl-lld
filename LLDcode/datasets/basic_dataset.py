@@ -1,5 +1,5 @@
 
-from datasets.debug_image_dataset import DebugImageDataset
+from LLDcode.datasets.debug_image_dataset import DebugImageDataset
 
 
 class BasicDataset(DebugImageDataset):

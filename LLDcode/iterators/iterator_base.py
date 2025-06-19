@@ -1,5 +1,5 @@
 
-from graph.node import Node
+from LLDcode.graph.node import Node
 
 
 class IteratorBase(Node):

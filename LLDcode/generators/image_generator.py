@@ -1,8 +1,8 @@
 
 import numpy as np
-import utils.sitk_np
-from generators.transformation_generator_base import TransformationGeneratorBase
-from utils.sitk_image import resample
+import LLDcode.utils.sitk_np
+from LLDcode.generators.transformation_generator_base import TransformationGeneratorBase
+from LLDcode.utils.sitk_image import resample
 
 
 class ImageGenerator(TransformationGeneratorBase):
@@ -133,7 +133,7 @@ class ImageGenerator(TransformationGeneratorBase):
         :return: A list of np array.
         """
         output_image_list_np = []
-        output_image_np = utils.sitk_np.sitk_to_np(output_image_sitk, self.np_pixel_type)
+        output_image_np = LLDcode.utils.sitk_np.sitk_to_np(output_image_sitk, self.np_pixel_type)
         pixel_components = output_image_sitk.GetNumberOfComponentsPerPixel()
         if pixel_components > 1:
             for i in range(pixel_components):

@@ -5,7 +5,7 @@ import os
 
 import tensorflow as tf
 
-import tensorflow_train.utils.tensorflow_util
+import LLDcode.tensorflow_train.utils.tensorflow_util
 
 
 class LossAggregator(object):

@@ -3,8 +3,8 @@ import os
 import csv
 import re
 import numpy as np
-from utils.landmark.common import Landmark
-from utils.io.common import create_directories_for_file_name
+from LLDcode.utils.landmark.common import Landmark
+from LLDcode.utils.io.common import create_directories_for_file_name
 
 def load(file_name, num_landmarks, dim):
     ext = os.path.splitext(file_name)[1]

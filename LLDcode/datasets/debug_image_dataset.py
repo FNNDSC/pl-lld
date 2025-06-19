@@ -1,8 +1,8 @@
 
-from datasets.dataset_base import DatasetBase
+from LLDcode.datasets.dataset_base import DatasetBase
 import numpy as np
-import utils.io.image
-import utils.np_image
+import LLDcode.utils.io.image
+import LLDcode.utils.np_image
 import os
 import matplotlib.pyplot as plt
 

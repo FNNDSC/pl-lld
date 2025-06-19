@@ -1,7 +1,7 @@
 
 import numpy as np
-import utils.sitk_np
-import utils.sitk_image
+import LLDcode.utils.sitk_np
+import LLDcode.utils.sitk_image
 
 class MetricBase(object):
     def __call__(self, prediction_sitk, groundtruth_sitk, labels):

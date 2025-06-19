@@ -1,7 +1,7 @@
 
 import SimpleITK as sitk
-import utils.sitk_np
-import transformations.intensity.np.normalize
+import LLDcode.utils.sitk_np
+import LLDcode.transformations.intensity.np.normalize
 
 
 def robust_min_max(img, consideration_factors=(0.1, 0.1)):

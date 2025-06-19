@@ -2,7 +2,7 @@
 import numpy as np
 import SimpleITK as sitk
 
-from transformations.spatial.base import SpatialTransformBase
+from LLDcode.transformations.spatial.base import SpatialTransformBase
 
 
 class CenterLineAtYAxis(SpatialTransformBase):

@@ -3,7 +3,7 @@ Functions for bilinear or trilinear resizing.
 """
 
 import tensorflow as tf
-from tensorflow_train.utils.data_format import get_batch_channel_image_size, get_image_size
+from LLDcode.tensorflow_train.utils.data_format import get_batch_channel_image_size, get_image_size
 
 
 def resize_trilinear(inputs, factors=None, output_size=None, name=None, data_format='channels_first'):

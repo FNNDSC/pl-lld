@@ -2,8 +2,8 @@
 import SimpleITK as sitk
 import numpy as np
 import copy
-import utils.sitk_np
-import utils.np_image
+import LLDcode.utils.sitk_np
+import LLDcode.utils.np_image
 
 
 def transform_coords(coords, transformation):
@@ -82,7 +82,7 @@ def transform_landmarks_inverse_with_resampling(landmarks, transformation, size,
     dim = len(size)
     displacement_field = sitk.TransformToDisplacementField(transformation, sitk.sitkVectorFloat32, size=size, outputSpacing=spacing)
     if dim == 2:
-        displacement_field = np.transpose(utils.sitk_np.sitk_to_np(displacement_field), [1, 0, 2])
+        displacement_field = np.transpose(LLDcode.utils.sitk_np.sitk_to_np(displacement_field), [1, 0, 2])
         mesh = np.meshgrid(np.array(range(size[0]), np.float32),
                            np.array(range(size[1]), np.float32),
                            indexing='ij')
@@ -96,7 +96,7 @@ def transform_landmarks_inverse_with_resampling(landmarks, transformation, size,
             # calculate distances to current landmark coordinates
             vec = displacement_field - coords
             distances = np.linalg.norm(vec, axis=2)
-            invert_min_distance, transformed_coords = utils.np_image.find_quadratic_subpixel_maximum_in_image(-distances)
+            invert_min_distance, transformed_coords = LLDcode.utils.np_image.find_quadratic_subpixel_maximum_in_image(-distances)
             min_distance = -invert_min_distance
             if max_min_distance is not None and min_distance > max_min_distance:
                 transformed_landmarks[i].is_valid = False
@@ -121,7 +121,7 @@ def transform_landmarks_inverse_with_resampling(landmarks, transformation, size,
             vec = displacement_field - coords
             #distances = np.sqrt(vec[:, :, :, 0] ** 2 + vec[:, :, :, 1] ** 2 + vec[:, :, :, 2] ** 2)
             distances = np.linalg.norm(vec, axis=3)
-            invert_min_distance, transformed_coords = utils.np_image.find_quadratic_subpixel_maximum_in_image(-distances)
+            invert_min_distance, transformed_coords = LLDcode.utils.np_image.find_quadratic_subpixel_maximum_in_image(-distances)
             min_distance = -invert_min_distance
             if max_min_distance is not None and min_distance > max_min_distance:
                 transformed_landmarks[i].is_valid = False

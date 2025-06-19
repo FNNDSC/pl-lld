@@ -1,6 +1,6 @@
 
-from transformations.spatial.base import SpatialTransformBase
-from transformations.spatial.common import create_composite
+from LLDcode.transformations.spatial.base import SpatialTransformBase
+from LLDcode.transformations.spatial.common import create_composite
 
 
 class Composite(SpatialTransformBase):

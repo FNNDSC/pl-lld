@@ -2,8 +2,8 @@
 import SimpleITK as sitk
 import numpy as np
 
-from transformations.spatial.base import SpatialTransformBase
-from utils.random import float_uniform
+from LLDcode.transformations.spatial.base import SpatialTransformBase
+from LLDcode.utils.random import float_uniform
 
 
 class Deformation(SpatialTransformBase):

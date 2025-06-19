@@ -1,15 +1,15 @@
 
 import SimpleITK as sitk
 import numpy as np
-import utils.geometry
-import utils.sitk_image
-import utils.sitk_np
-import utils.np_image
-import utils.landmark.transform
-import utils.segmentation.metrics
-import utils.io.image
-import utils.io.text
-import utils.io.common
+import LLDcode.utils.geometry
+import LLDcode.utils.sitk_image
+import LLDcode.utils.sitk_np
+import LLDcode.utils.np_image
+import LLDcode.utils.landmark.transform
+import LLDcode.utils.segmentation.metrics
+import LLDcode.utils.io.image
+import LLDcode.utils.io.text
+import LLDcode.utils.io.common
 from collections import OrderedDict
 import os
 import csv
